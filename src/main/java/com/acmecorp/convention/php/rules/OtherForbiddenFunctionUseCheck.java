@@ -43,34 +43,34 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
  * accessed through {@link PHPVisitorCheck#context()}.
  */
 @Rule(
-  key = OtherForbiddenFunctionUseCheck.KEY,
-  priority = Priority.MAJOR,
-  name = "Forbidden function should not be used.",
-  tags = {"convention"},
-// Description can either be given in this annotation or through HTML name <ruleKey>.html located in package src/resources/org/sonar/l10n/php/rules/<repositoryKey>
-  description = "<p>The following functions should not be used:</p> <ul><li>foo</li> <li>bar</li></ul>"
-  )
-public class                   OtherForbiddenFunctionUseCheck extends PHPSubscriptionCheck {
+    key = OtherForbiddenFunctionUseCheck.KEY,
+    priority = Priority.MAJOR,
+    name = "Forbidden function should not be used.",
+    tags = {"convention"},
+    // Description can either be given in this annotation or through HTML name <ruleKey>.html located in package src/resources/org/sonar/l10n/php/rules/<repositoryKey>
+    description = "<p>The following functions should not be used:</p> <ul><li>foo</li> <li>bar</li></ul>"
+)
+public class OtherForbiddenFunctionUseCheck extends PHPSubscriptionCheck {
 
-  private static final Set<String> FORBIDDEN_FUNCTIONS = ImmutableSet.of("foo", "bar");
-  public static final String KEY = "S2";
+    private static final Set<String> FORBIDDEN_FUNCTIONS = ImmutableSet.of("foo", "bar");
+    public static final String KEY = "S2";
 
-  @Override
-  public List<Kind> nodesToVisit() {
-    return ImmutableList.of(Kind.FUNCTION_CALL);
-  }
-
-  /**
-   * Overriding method visiting the call expression to create an issue
-   * each time a call to "foo()" or "bar()" is done.
-   */
-  @Override
-  public void visitNode(Tree tree) {
-    ExpressionTree callee = ((FunctionCallTree) tree).callee();
-
-    if (callee.is(Kind.NAMESPACE_NAME) && FORBIDDEN_FUNCTIONS.contains(((NamespaceNameTree) callee).qualifiedName())) {
-      context().newIssue(this, callee, "Remove the usage of this forbidden function.");
+    @Override
+    public List<Kind> nodesToVisit() {
+      return ImmutableList.of(Kind.FUNCTION_CALL);
     }
-  }
+
+    /**
+     * Overriding method visiting the call expression to create an issue
+     * each time a call to "foo()" or "bar()" is done.
+     */
+    @Override
+    public void visitNode(Tree tree) {
+        ExpressionTree callee = ((FunctionCallTree) tree).callee();
+
+        if (callee.is(Kind.NAMESPACE_NAME) && FORBIDDEN_FUNCTIONS.contains(((NamespaceNameTree) callee).qualifiedName())) {
+            context().newIssue(this, callee, "Remove the usage of this forbidden function.");
+        }
+    }
 
 }

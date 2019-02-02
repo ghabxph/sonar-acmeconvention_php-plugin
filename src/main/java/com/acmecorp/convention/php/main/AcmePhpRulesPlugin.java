@@ -29,8 +29,8 @@ import org.sonar.api.Plugin;
 public class AcmePhpRulesPlugin implements Plugin {
 
   /**
-   * (Method) Entry point of Acme Php Rules Plugin
-   */
-  @Override
-  public void define(Context context) { context.addExtension(AcmePhpRules.class); }
+     * (Method) Entry point of Acme Php Rules Plugin
+     */
+    @Override
+    public void define(Context context) { context.addExtension(AcmePhpRules.class); }
 }

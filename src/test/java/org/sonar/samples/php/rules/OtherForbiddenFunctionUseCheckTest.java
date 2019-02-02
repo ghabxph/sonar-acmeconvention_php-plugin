@@ -31,9 +31,9 @@ import java.io.File;
  */
 public class OtherForbiddenFunctionUseCheckTest {
 
-  @Test
-  public void test() throws Exception {
-    PHPCheckTest.check(new OtherForbiddenFunctionUseCheck(), new PhpTestFile(new File("src/test/resources/checks/sample.php")));
-  }
+    @Test
+    public void test() throws Exception {
+        PHPCheckTest.check(new OtherForbiddenFunctionUseCheck(), new PhpTestFile(new File("src/test/resources/checks/sample.php")));
+    }
 
 }

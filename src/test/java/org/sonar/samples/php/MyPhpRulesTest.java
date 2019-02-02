@@ -8,12 +8,12 @@ import static org.junit.Assert.assertEquals;
 
 public class MyPhpRulesTest {
 
-  @Test
-  public void rules() {
-    AcmePhpRules rulesDefinition = new AcmePhpRules();
-    RulesDefinition.Context context = new RulesDefinition.Context();
-    rulesDefinition.define(context);
-    RulesDefinition.Repository repository = context.repository("custom");
-    assertEquals(4, repository.rules().size());
-  }
+    @Test
+    public void rules() {
+        AcmePhpRules rulesDefinition = new AcmePhpRules();
+        RulesDefinition.Context context = new RulesDefinition.Context();
+        rulesDefinition.define(context);
+        RulesDefinition.Repository repository = context.repository("custom");
+        assertEquals(4, repository.rules().size());
+    }
 }
