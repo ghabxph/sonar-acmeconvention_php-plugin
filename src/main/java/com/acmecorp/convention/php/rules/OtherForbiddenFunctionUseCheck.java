@@ -50,7 +50,7 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
 // Description can either be given in this annotation or through HTML name <ruleKey>.html located in package src/resources/org/sonar/l10n/php/rules/<repositoryKey>
   description = "<p>The following functions should not be used:</p> <ul><li>foo</li> <li>bar</li></ul>"
   )
-public class OtherForbiddenFunctionUseCheck extends PHPSubscriptionCheck {
+public class                   OtherForbiddenFunctionUseCheck extends PHPSubscriptionCheck {
 
   private static final Set<String> FORBIDDEN_FUNCTIONS = ImmutableSet.of("foo", "bar");
   public static final String KEY = "S2";

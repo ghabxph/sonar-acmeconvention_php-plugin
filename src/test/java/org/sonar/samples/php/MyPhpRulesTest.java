@@ -1,6 +1,6 @@
 package org.sonar.samples.php;
 
-import com.acmecorp.convention.php.AcmePhpRules;
+import com.acmecorp.convention.php.main.AcmePhpRules;
 import org.junit.Test;
 import org.sonar.api.server.rule.RulesDefinition;
 
@@ -14,6 +14,6 @@ public class MyPhpRulesTest {
     RulesDefinition.Context context = new RulesDefinition.Context();
     rulesDefinition.define(context);
     RulesDefinition.Repository repository = context.repository("custom");
-    assertEquals(2, repository.rules().size());
+    assertEquals(4, repository.rules().size());
   }
 }

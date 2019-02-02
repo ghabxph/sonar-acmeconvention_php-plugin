@@ -19,7 +19,6 @@
  */
 package com.acmecorp.convention.php.main;
 
-import com.acmecorp.convention.php.AcmePhpRules;
 import org.sonar.api.Plugin;
 
 /**

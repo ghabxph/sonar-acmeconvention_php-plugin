@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.samples.php.checks;
+package org.sonar.samples.php.rules;
 
 import com.acmecorp.convention.php.rules.OtherForbiddenFunctionUseCheck;
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class OtherForbiddenFunctionUseCheckTest {
 
   @Test
   public void test() throws Exception {
-    PHPCheckTest.check(new OtherForbiddenFunctionUseCheck(), new PhpTestFile(new File("src/test/resources/checks/forbiddenFunctionUseCheck.php")));
+    PHPCheckTest.check(new OtherForbiddenFunctionUseCheck(), new PhpTestFile(new File("src/test/resources/checks/sample.php")));
   }
 
 }
