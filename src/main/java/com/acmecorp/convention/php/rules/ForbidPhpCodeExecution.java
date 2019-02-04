@@ -6,14 +6,20 @@ import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 
 /**
- * (Class) Entry point of Acme Php Rules Plugin
+ * (Rule) Forbids the use of PHP Code Execution Functions
+ * Disallowed Functions:
+ *   - eval
+ *   - create_functions
+ *
+ * To Support:
+ *   - Disallow preg_replace with e (exec)
  *
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
     priority = Priority.MAJOR,
     key = "ForbidPhpCodeExecution",
-    name = "Forbid Goto Statement",
+    name = "Forbids the use of PHP Code Execution Functions",
     tags = {"convention"}
 )
 public class ForbidPhpCodeExecution extends ForbidFunctionRule {

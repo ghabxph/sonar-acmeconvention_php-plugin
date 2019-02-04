@@ -6,14 +6,14 @@ import org.sonar.plugins.php.api.tree.statement.GotoStatementTree;
 import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
 
 /**
- * (Class) Entry point of Acme Php Rules Plugin
+ * (Rule) Forbids the use of GOTO
  *
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
     priority = Priority.MAJOR,
     key = "ForbidGoto",
-    name = "Forbid Goto Statement",
+    name = "Forbids the use of GOTO",
     tags = {"convention"}
 )
 public class ForbidGoto extends PHPVisitorCheck {

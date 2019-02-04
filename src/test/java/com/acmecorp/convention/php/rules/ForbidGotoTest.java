@@ -1,30 +1,29 @@
-package org.sonar.samples.php.rules;
+package com.acmecorp.convention.php.rules;
 
-import com.acmecorp.convention.php.rules.ForbidCommandExecution;
 import org.junit.Test;
 import org.sonar.plugins.php.api.tests.PHPCheckTest;
 import org.sonar.plugins.php.api.tests.PhpTestFile;
 
 import java.io.File;
 
-
 /**
- * (Unit Test) Tests Forbid Command Execution Functions
+ * (Unit Test) Tests Forbid Goto
  *
  * @author ghabxph (ghabxph.official@gmail.com)
  */
-public class ForbidCommandExecutionFunctionsTest {
+public class ForbidGotoTest {
 
     @Test
-    public void test() {
+    public void test() throws Exception {
 
         // Class to test
-        ForbidCommandExecution classToTest = new ForbidCommandExecution();
+        ForbidGoto classToTest = new ForbidGoto();
 
         // Sample PHP File
         PhpTestFile fileSample = new PhpTestFile(new File("src/test/resources/checks/sample.php"));
 
         // Generic Test
         PHPCheckTest.check(classToTest, fileSample);
+
     }
 }

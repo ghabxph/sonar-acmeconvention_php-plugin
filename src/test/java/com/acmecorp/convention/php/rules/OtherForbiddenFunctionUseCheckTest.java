@@ -17,9 +17,8 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.samples.php.rules;
+package com.acmecorp.convention.php.rules;
 
-import com.acmecorp.convention.php.rules.OtherForbiddenFunctionUseCheck;
 import org.junit.Test;
 import org.sonar.plugins.php.api.tests.PhpTestFile;
 import org.sonar.plugins.php.api.tests.PHPCheckTest;

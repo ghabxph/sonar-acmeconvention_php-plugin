@@ -6,14 +6,19 @@ import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 
 /**
- * (Class) Entry point of Acme Php Rules Plugin
+ * (Rule) Forbids the use of PHP Command Execution Functions
+ * Disallowed Functions:
+ *   - exec        - passthru
+ *   - system      - shell_exec
+ *   - popen       - proc_open
+ *   - pcntl_exec
  *
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
     priority = Priority.MAJOR,
     key = "ForbidCommandExecution",
-    name = "Forbid Goto Statement",
+    name = "Forbids the use of PHP Command Execution Functions",
     tags = {"convention"}
 )
 public class ForbidCommandExecution extends ForbidFunctionRule {

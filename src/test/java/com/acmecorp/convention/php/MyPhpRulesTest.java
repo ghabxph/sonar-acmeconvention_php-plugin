@@ -1,4 +1,4 @@
-package org.sonar.samples.php;
+package com.acmecorp.convention.php;
 
 import com.acmecorp.convention.php.main.AcmePhpRules;
 import org.junit.Test;

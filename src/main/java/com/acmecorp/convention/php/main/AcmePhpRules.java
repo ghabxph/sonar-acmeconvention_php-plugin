@@ -89,10 +89,7 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
         repository.rules().forEach(rule -> rule.setHtmlDescription(loadResource("/com/acmecorp/convention/php/rules/" + rule.key() + ".html")));
 
         // Optionally define remediation costs
-        Map<String, String> remediationCosts = new HashMap<>();
-        remediationCosts.put(OtherForbiddenFunctionUseCheck.KEY, "5min");
-        repository.rules().forEach(rule -> rule.setDebtRemediationFunction(
-            rule.debtRemediationFunctions().constantPerIssue(remediationCosts.get(rule.key()))));
+        defineRemediationCosts(repository);
 
         repository.done();
     }
@@ -112,5 +109,19 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
         } catch (IOException e) {
             throw new IllegalStateException("Failed to read resource: " + path, e);
         }
+    }
+
+    /**
+     * Optionally define remediation costs
+     *
+     * @param repository  NewRepository
+     */
+    private void defineRemediationCosts(NewRepository repository)
+    {
+//        Map<String, String> remediationCosts = new HashMap<>();
+//        remediationCosts.put(OtherForbiddenFunctionUseCheck.KEY, "5min");
+//        repository.rules().forEach();
+//        repository.rules().forEach(rule -> rule.setDebtRemediationFunction(
+//                rule.debtRemediationFunctions().constantPerIssue(remediationCosts.get(rule.key()))));
     }
 }
