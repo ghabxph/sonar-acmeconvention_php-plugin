@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableSet;
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 
+import java.util.Set;
+
 /**
  * (Rule) Forbids the use of PHP Code Execution Functions
  * Disallowed Functions:
@@ -30,7 +32,7 @@ public class ForbidPhpCodeExecution extends ForbidFunctionRule {
      * @return ImmutableSet
      */
     @Override
-    protected ImmutableSet forbiddenFunctions() {
+    protected Set<String> forbiddenFunctions() {
         return ImmutableSet.of("eval", "create_function");
     }
 

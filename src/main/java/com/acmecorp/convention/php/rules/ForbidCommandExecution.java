@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableSet;
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 
+import java.util.Set;
+
 /**
  * (Rule) Forbids the use of PHP Command Execution Functions
  * Disallowed Functions:
@@ -29,7 +31,7 @@ public class ForbidCommandExecution extends ForbidFunctionRule {
      * @return ImmutableSet
      */
     @Override
-    protected ImmutableSet forbiddenFunctions() {
+    protected Set<String> forbiddenFunctions() {
         return ImmutableSet.of("exec", "passthru", "system", "shell_exec", "popen", "proc_open", "pcntl_exec");
     }
 

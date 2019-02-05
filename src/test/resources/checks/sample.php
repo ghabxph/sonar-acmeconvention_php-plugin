@@ -21,20 +21,3 @@ $myObj = new Obj();
 $myObj->foo();            // OK
 $myObj->bar();            // OK
 
-
-// Usage of goto
-goto a;
-echo 'Foo';
-
-a:
-echo 'Bar';
-
-// Usage of forbidden function
-exec('');
-passthru('');
-system('');
-shell_exec('');
-popen('');
-pcntl_exec('');
-create_function('');
-eval('');

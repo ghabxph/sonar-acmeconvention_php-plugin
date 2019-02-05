@@ -118,10 +118,12 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
      */
     private void defineRemediationCosts(NewRepository repository)
     {
-//        Map<String, String> remediationCosts = new HashMap<>();
-//        remediationCosts.put(OtherForbiddenFunctionUseCheck.KEY, "5min");
-//        repository.rules().forEach();
-//        repository.rules().forEach(rule -> rule.setDebtRemediationFunction(
-//                rule.debtRemediationFunctions().constantPerIssue(remediationCosts.get(rule.key()))));
+        Map<String, String> remediationCosts = new HashMap<>();
+        remediationCosts.put("ForbidCommandExecution", "5min");
+        remediationCosts.put("ForbidGoto", "5min");
+        remediationCosts.put("ForbidPhpCodeExecution", "5min");
+        remediationCosts.put(OtherForbiddenFunctionUseCheck.KEY, "5min");
+        repository.rules().forEach(rule -> rule.setDebtRemediationFunction(
+                rule.debtRemediationFunctions().constantPerIssue(remediationCosts.get(rule.key()))));
     }
 }

@@ -1,12 +1,12 @@
 package com.acmecorp.convention.php.rules.common;
 
-import com.google.common.collect.ImmutableSet;
 import org.sonar.plugins.php.api.tree.Tree;
 import org.sonar.plugins.php.api.tree.declaration.NamespaceNameTree;
 import org.sonar.plugins.php.api.tree.expression.ExpressionTree;
 import org.sonar.plugins.php.api.tree.expression.FunctionCallTree;
 import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
 
+import java.util.Set;
 import java.util.regex.Pattern;
 
 /**
@@ -22,7 +22,7 @@ public abstract class ForbidFunctionRule extends PHPVisitorCheck {
      *
      * @return ImmutableSet
      */
-    protected abstract ImmutableSet forbiddenFunctions();
+    protected abstract Set<String> forbiddenFunctions();
 
     /**
      * Error message to be returned if blocked function is called
@@ -53,6 +53,7 @@ public abstract class ForbidFunctionRule extends PHPVisitorCheck {
         ExpressionTree callee = tree.callee();
         String keyword = (callee.is(Tree.Kind.NAMESPACE_NAME)) ? ((NamespaceNameTree) callee).qualifiedName() : "";
 
+        System.out.println(keyword);
         if (!keyword.equals("") && forbiddenFunctions().contains(keyword)) {
             context().newIssue(this, callee, finalErrorMessage(keyword));
             System.out.println(callee.getKind() + " " + keyword + ": " + finalErrorMessage(keyword));

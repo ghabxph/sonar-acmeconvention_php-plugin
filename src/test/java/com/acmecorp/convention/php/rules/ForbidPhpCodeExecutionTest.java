@@ -15,15 +15,15 @@ import java.io.File;
 public class ForbidPhpCodeExecutionTest {
 
     @Test
-    public void test() throws Exception {
+    public void test() {
 
         // Class to test
-//        ForbidPhpCodeExecution classToTest = new ForbidPhpCodeExecution();
-//
-//        // Sample PHP File
-//        PhpTestFile fileSample = new PhpTestFile(new File("src/test/resources/checks/sample.php"));
-//
-//        // Generic Test
-//        PHPCheckTest.check(classToTest, fileSample);
+        ForbidPhpCodeExecution classToTest = new ForbidPhpCodeExecution();
+
+        // Sample PHP File
+        PhpTestFile fileSample = new PhpTestFile(new File("src/test/resources/checks/ForbidPhpCodeExecution.php"));
+
+        // Generic Test
+        PHPCheckTest.check(classToTest, fileSample);
     }
 }

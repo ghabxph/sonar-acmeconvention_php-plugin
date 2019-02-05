@@ -14,16 +14,15 @@ import java.io.File;
 public class ForbidGotoTest {
 
     @Test
-    public void test() throws Exception {
+    public void test() {
 
         // Class to test
         ForbidGoto classToTest = new ForbidGoto();
 
         // Sample PHP File
-        PhpTestFile fileSample = new PhpTestFile(new File("src/test/resources/checks/sample.php"));
+        PhpTestFile fileSample = new PhpTestFile(new File("src/test/resources/checks/ForbidGoto.php"));
 
         // Generic Test
         PHPCheckTest.check(classToTest, fileSample);
-
     }
 }
