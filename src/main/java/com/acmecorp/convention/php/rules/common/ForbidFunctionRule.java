@@ -53,10 +53,8 @@ public abstract class ForbidFunctionRule extends PHPVisitorCheck {
         ExpressionTree callee = tree.callee();
         String keyword = (callee.is(Tree.Kind.NAMESPACE_NAME)) ? ((NamespaceNameTree) callee).qualifiedName() : "";
 
-        System.out.println(keyword);
         if (!keyword.equals("") && forbiddenFunctions().contains(keyword)) {
             context().newIssue(this, callee, finalErrorMessage(keyword));
-            System.out.println(callee.getKind() + " " + keyword + ": " + finalErrorMessage(keyword));
         }
         super.visitFunctionCall(tree);
     }

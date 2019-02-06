@@ -1,9 +1,9 @@
 <?php
 
-exec('');
-passthru('');
-system('');
-shell_exec('');
-popen('');
-pcntl_exec('');
+exec('');           // NOK
+passthru('');       // NOK
+system('');         // NOK
+shell_exec('');     // NOK
+popen('');          // NOK
+pcntl_exec('');     // NOK
 

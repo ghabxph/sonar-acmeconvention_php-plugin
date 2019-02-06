@@ -5,6 +5,6 @@
 goto a;                 // NOK
 echo 'Foo';
 
-a:                      // NOK
+a:
 echo 'Bar';
 

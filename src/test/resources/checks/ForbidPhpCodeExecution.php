@@ -1,4 +1,4 @@
 <?php
 
-create_function('');
-eval('');
+create_function('');    // NOK
+eval('');               // NOK
