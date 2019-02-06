@@ -16,6 +16,7 @@ public class MethodLess100Lines extends PHPVisitorCheck {
      *
      * @param tree MethodDeclarationTree
      */
+    @Override
     public void visitMethodDeclaration(MethodDeclarationTree tree) {
 
         BlockTreeImpl block = (BlockTreeImpl)tree.body();

@@ -27,8 +27,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.api.server.rule.RulesDefinitionAnnotationLoader;
 import org.sonar.plugins.php.api.visitors.PHPCustomRuleRepository;
@@ -61,19 +59,22 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
     public ImmutableList<Class> checkClasses() {
         return ImmutableList.of(
 
-            // Sample rule #2
-            OtherForbiddenFunctionUseCheck.class,
-
             // Forbid command execution functions such as:
             // exec, passthru, system, shell_exec, popen, proc_open, pcntl_exec
             ForbidCommandExecution.class,
+
+            // Forbids goto statement
+            ForbidGoto.class,
 
             // Forbid PHP Code execution functions such as:
             // eval, preg_replace (with e flag), create_function
             ForbidPhpCodeExecution.class,
 
-            // Forbids goto statement
-            ForbidGoto.class
+            // Checks whether class is less than 100 lines
+            MethodLess100Lines.class,
+
+            // Checks for CRLF
+            NoCrlf.class
       );
     }
 
@@ -118,12 +119,11 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
      */
     private void defineRemediationCosts(NewRepository repository)
     {
-        Map<String, String> remediationCosts = new HashMap<>();
-        remediationCosts.put("ForbidCommandExecution", "5min");
-        remediationCosts.put("ForbidGoto", "5min");
-        remediationCosts.put("ForbidPhpCodeExecution", "5min");
-        remediationCosts.put(OtherForbiddenFunctionUseCheck.KEY, "5min");
-        repository.rules().forEach(rule -> rule.setDebtRemediationFunction(
-                rule.debtRemediationFunctions().constantPerIssue(remediationCosts.get(rule.key()))));
+//        Map<String, String> remediationCosts = new HashMap<>();
+//        remediationCosts.put("ForbidCommandExecution", "5min");
+//        remediationCosts.put("ForbidGoto", "5min");
+//        remediationCosts.put("ForbidPhpCodeExecution", "5min");
+//        repository.rules().forEach(rule -> rule.setDebtRemediationFunction(
+//                rule.debtRemediationFunctions().constantPerIssue(remediationCosts.get(rule.key()))));
     }
 }

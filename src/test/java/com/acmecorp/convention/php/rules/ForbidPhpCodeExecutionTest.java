@@ -1,10 +1,7 @@
 package com.acmecorp.convention.php.rules;
 
-import org.junit.Test;
-import org.sonar.plugins.php.api.tests.PHPCheckTest;
-import org.sonar.plugins.php.api.tests.PhpTestFile;
-
-import java.io.File;
+import com.acmecorp.convention.php.helper.GenericTest;
+import org.sonar.plugins.php.api.visitors.PHPCheck;
 
 
 /**
@@ -12,18 +9,25 @@ import java.io.File;
  *
  * @author ghabxph (ghabxph.official@gmail.com)
  */
-public class ForbidPhpCodeExecutionTest {
+public class ForbidPhpCodeExecutionTest extends GenericTest {
 
-    @Test
-    public void test() {
+    /**
+     * Class to be tested
+     *
+     * @return PHPCheck  Returns the class to be tested
+     */
+    @Override
+    protected PHPCheck classToTest() {
+        return new ForbidPhpCodeExecution();
+    }
 
-        // Class to test
-        ForbidPhpCodeExecution classToTest = new ForbidPhpCodeExecution();
-
-        // Sample PHP File
-        PhpTestFile fileSample = new PhpTestFile(new File("src/test/resources/checks/ForbidPhpCodeExecution.php"));
-
-        // Generic Test
-        PHPCheckTest.check(classToTest, fileSample);
+    /**
+     * Path to file sample
+     *
+     * @return String  Returns the string path
+     */
+    @Override
+    protected String fileSample() {
+        return "src/test/resources/checks/ForbidPhpCodeExecution.php";
     }
 }

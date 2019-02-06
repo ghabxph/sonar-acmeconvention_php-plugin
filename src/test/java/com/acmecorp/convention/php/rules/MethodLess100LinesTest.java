@@ -1,28 +1,32 @@
 package com.acmecorp.convention.php.rules;
 
-import org.junit.Test;
-import org.sonar.plugins.php.api.tests.PHPCheckTest;
-import org.sonar.plugins.php.api.tests.PhpTestFile;
-
-import java.io.File;
+import com.acmecorp.convention.php.helper.GenericTest;
+import org.sonar.plugins.php.api.visitors.PHPCheck;
 
 /**
  * (Test) Tests rule that checks whether method has less than 100 lines of code
  *
  * @author ghabxph (ghabxph.official@gmail.com)
  */
-public class MethodLess100LinesTest {
+public class MethodLess100LinesTest extends GenericTest {
 
-    @Test
-    public void test() {
+    /**
+     * Class to be tested
+     *
+     * @return PHPCheck  Returns the class to be tested
+     */
+    @Override
+    protected PHPCheck classToTest() {
+        return new MethodLess100Lines();
+    }
 
-        // Class to test
-        MethodLess100Lines classToTest = new MethodLess100Lines();
-
-        // Sample PHP File
-        PhpTestFile fileSample = new PhpTestFile(new File("src/test/resources/checks/MethodLess100Lines.php"));
-
-        // Generic Test
-        PHPCheckTest.check(classToTest, fileSample);
+    /**
+     * Path to file sample
+     *
+     * @return String  Returns the string path
+     */
+    @Override
+    protected String fileSample() {
+        return "src/test/resources/checks/MethodLess100Lines.php";
     }
 }
