@@ -41,7 +41,7 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
     /**
      * Name of constant
      */
-    private static final String NAME = "ACME Coding Convention";
+    private static final String TITLE = "ACME Inc. Coding Convention Violation";
 
     /**
      * Provide the repository key
@@ -80,7 +80,7 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
 
     @Override
     public void define(Context context) {
-        NewRepository repository = context.createRepository(repositoryKey(), "php").setName(NAME);
+        NewRepository repository = context.createRepository(repositoryKey(), "php").setName(TITLE);
 
         // Load rule meta data from annotations
         RulesDefinitionAnnotationLoader annotationLoader = new RulesDefinitionAnnotationLoader();
@@ -106,7 +106,7 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
             for (int len = in.read(buffer); len != -1; len = in.read(buffer)) {
                 result.write(buffer, 0, len);
             }
-            return new String(result.toByteArray(), StandardCharsets.UTF_8);
+            return new String(result.toByteArray(), StandardCharsets.UTF_8).replace("{{title}}", TITLE);
         } catch (IOException e) {
             throw new IllegalStateException("Failed to read resource: " + path, e);
         }
