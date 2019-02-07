@@ -5,7 +5,7 @@
 
 	<groupId>com.acmecorp.convention</groupId>
 	<artifactId>sonar-acmeconvention_php-plugin</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>v1.0.0-SNAPSHOT-1.1.0</version>
 	<packaging>sonar-plugin</packaging>
 
 	<name>ACME Inc. PHP Custom Rules</name>

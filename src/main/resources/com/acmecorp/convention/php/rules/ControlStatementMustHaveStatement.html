@@ -1,0 +1,39 @@
+<h1>{{title}}</h1>
+<hr>
+<p>Control statement must have statement.</p>
+
+<p><b>Valid:</b></p>
+<code style="font-family:monospace; white-space:pre-wrap">
+for ($i = 0; $i < 10; $i++) {       // OK
+    echo $i;
+}
+foreach ($aFiles as $sFile) {
+    echo $sFile;
+}
+while($condition) {                 // OK
+    echo "While statement";
+}
+if ($condition) {                   // OK
+    echo "I am if statement";
+} else if ($condition) {            // OK
+    echo "I am else if statement";
+} elseif ($condition) {             // OK
+    echo "I am elseif statement";
+} else {                            // OK
+    echo "I am else statement";
+}
+</code>
+<p><b>Invalid:</b></p>
+<code style="font-family:monospace; white-space:pre-wrap">
+for ($i = 0; $i < 10; $i++) {       // NOK
+}
+foreach ($aFiles as $sFile) {
+}
+while($condition) {                 // NOK
+}
+if ($condition) {                   // NOK
+} else if ($condition) {            // NOK
+} elseif ($condition) {             // NOK
+} else {                            // NOK
+}
+</code>

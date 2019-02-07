@@ -59,21 +59,37 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
     public ImmutableList<Class> checkClasses() {
         return ImmutableList.of(
 
-            // Forbid command execution functions such as:
-            // exec, passthru, system, shell_exec, popen, proc_open, pcntl_exec
+            // (Rule) Use single quote (instead of double quote)
+            AvoidDoubleQuote.class,
+
+            // (Rule) Prevents usage of delete function
+            AvoidFunctionDelete.class,
+
+            // (Rule) Avoid usage of sizeof
+            AvoidFunctionSizeof.class,
+
+            // (Rule) Prohibits closing tag.
+            AvoidTagCloseForClassFiles.class,
+
+            // (Rule) Prohibits short open tag usage.
+            AvoidTagShort.class,
+
+            // (Rule) Control statement cannot be empty
+            ControlStatementMustHaveStatement.class,
+
+            // (Rule) Forbids the use of PHP Command Execution Functions
             ForbidCommandExecution.class,
 
-            // Forbids goto statement
+            // (Rule) Forbids the use of GOTO
             ForbidGoto.class,
 
-            // Forbid PHP Code execution functions such as:
-            // eval, preg_replace (with e flag), create_function
+            // (Rule) Forbids the use of PHP Code Execution Functions
             ForbidPhpCodeExecution.class,
 
-            // Checks whether class is less than 100 lines
+            // (Rule) Method should have less than 100 lines of code
             MethodLess100Lines.class,
 
-            // Checks for CRLF
+            // (Rule) Rule that checks whether each php statement ends with CRLF
             NoCrlf.class
       );
     }

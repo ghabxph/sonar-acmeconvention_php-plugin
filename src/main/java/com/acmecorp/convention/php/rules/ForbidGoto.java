@@ -11,10 +11,10 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
-    priority = Priority.MAJOR,
+    priority = Priority.CRITICAL,
     key = "ForbidGoto",
     name = "Forbids the use of GOTO",
-    tags = {"convention"}
+    tags = {"convention", "code-smell", "bad-practice"}
 )
 public class ForbidGoto extends PHPVisitorCheck {
 
@@ -30,8 +30,6 @@ public class ForbidGoto extends PHPVisitorCheck {
      */
     @Override
     public void visitGotoStatement(GotoStatementTree tree) {
-
-        System.out.println(tree.getKind() + ": " + ERR_MSG);
 
         // Displays an error message, when a goto statement has been detected
         context().newIssue(this, tree, ERR_MSG);
