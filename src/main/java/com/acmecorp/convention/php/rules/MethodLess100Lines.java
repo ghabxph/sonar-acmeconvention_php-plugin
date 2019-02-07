@@ -4,6 +4,7 @@ import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 import org.sonar.php.tree.impl.statement.BlockTreeImpl;
 import org.sonar.plugins.php.api.tree.declaration.MethodDeclarationTree;
+import org.sonar.plugins.php.api.tree.statement.BlockTree;
 import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
 
 /**
@@ -27,7 +28,7 @@ public class MethodLess100Lines extends PHPVisitorCheck {
     @Override
     public void visitMethodDeclaration(MethodDeclarationTree tree) {
 
-        BlockTreeImpl block = (BlockTreeImpl)tree.body();
+        BlockTree block = (BlockTree)tree.body();
 
         if (block.statements().size() >= 100) {
             context().newIssue(this, tree, "Method should have less than 100 statements");

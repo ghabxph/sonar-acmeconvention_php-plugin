@@ -6,16 +6,16 @@ import com.acmecorp.convention.php.rules.common.ForbidFunctionRule;
 import com.google.common.collect.ImmutableSet;
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
-import org.sonar.php.tree.impl.expression.FunctionCallTreeImpl;
-import org.sonar.php.tree.impl.expression.LiteralTreeImpl;
 import org.sonar.plugins.php.api.tree.Tree;
 import org.sonar.plugins.php.api.tree.declaration.NamespaceNameTree;
 import org.sonar.plugins.php.api.tree.expression.ExpressionTree;
 import org.sonar.plugins.php.api.tree.expression.FunctionCallTree;
+import org.sonar.plugins.php.api.tree.expression.LiteralTree;
 
 import java.util.Set;
 
 /**
+ * (Rule) Forbids the use of PHP Code Execution Functions
  * (Rule) Forbids the use of PHP Code Execution Functions
  * Disallowed Functions:
  *   - eval
@@ -75,7 +75,7 @@ public class ForbidPhpCodeExecution extends ForbidFunctionRule {
             return;
         }
 
-        String pattern = PhpStringLiteral.set(((LiteralTreeImpl) ((FunctionCallTreeImpl) tree.callee().getParent()).arguments().get(0)).value()).value();
+        String pattern = PhpStringLiteral.set(((LiteralTree) ((FunctionCallTree) tree.callee().getParent()).arguments().get(0)).value()).value();
 
         if (PhpRegexModifier.hasModifier(pattern, 'e')) {
             context().newIssue(this, callee, "preg_replace with e is forbidden. Please consider not relying on this function.");
