@@ -59,9 +59,6 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
     public ImmutableList<Class> checkClasses() {
         return ImmutableList.of(
 
-            // (Rule) Prohibits closing tag.
-            AvoidClosingTagForClassFiles.class,
-
             // (Rule) Use single quote (instead of double quote)
             AvoidDoubleQuote.class,
 
@@ -70,6 +67,9 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
 
             // (Rule) Avoid usage of sizeof
             AvoidFunctionSizeof.class,
+
+            // (Rule) Prohibits closing tag.
+            AvoidTagCloseForClassFiles.class,
 
             // (Rule) Forbids the use of PHP Command Execution Functions
             ForbidCommandExecution.class,

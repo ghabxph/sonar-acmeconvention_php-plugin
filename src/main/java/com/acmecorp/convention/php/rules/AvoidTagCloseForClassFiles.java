@@ -21,11 +21,11 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
  */
 @Rule(
     priority = Priority.MAJOR,
-    key = "AvoidClosingTagForClassFiles",
+    key = "AvoidTagCloseForClassFiles",
     name = "Avoid closing tag (for class files)",
     tags = {"convention"}
 )
-public class AvoidClosingTagForClassFiles extends PHPVisitorCheck {
+public class AvoidTagCloseForClassFiles extends PHPVisitorCheck {
 
     /**
      * Visits token

@@ -3,7 +3,7 @@ package com.acmecorp.convention.php.rules;
 import com.acmecorp.convention.php.helper.GenericTest;
 import org.sonar.plugins.php.api.visitors.PHPCheck;
 
-public class AvoidClosingTagForClassFilesTest extends GenericTest {
+public class AvoidTagCloseForClassFilesTest extends GenericTest {
 
     /**
      * Class to be tested
@@ -12,7 +12,7 @@ public class AvoidClosingTagForClassFilesTest extends GenericTest {
      */
     @Override
     protected PHPCheck classToTest() {
-        return new AvoidClosingTagForClassFiles();
+        return new AvoidTagCloseForClassFiles();
     }
 
     /**
@@ -22,6 +22,6 @@ public class AvoidClosingTagForClassFilesTest extends GenericTest {
      */
     @Override
     protected String fileSample() {
-        return "src/test/resources/checks/AvoidClosingTagForClassFiles.php";
+        return "src/test/resources/checks/AvoidTagCloseForClassFiles.php";
     }
 }
