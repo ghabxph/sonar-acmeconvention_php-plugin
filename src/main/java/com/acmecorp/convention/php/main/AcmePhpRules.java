@@ -68,6 +68,9 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
             // (Rule) Prevents usage of delete function
             AvoidFunctionDelete.class,
 
+            // (Rule) Avoid usage of sizeof
+            AvoidFunctionSizeof.class,
+
             // (Rule) Forbids the use of PHP Command Execution Functions
             ForbidCommandExecution.class,
 
