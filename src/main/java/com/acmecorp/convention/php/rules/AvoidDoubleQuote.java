@@ -25,6 +25,7 @@ public class AvoidDoubleQuote extends PHPVisitorCheck {
      *
      * @param token  SyntaxToken
      */
+    @Override
     public void visitToken(SyntaxToken token) {
 
         if (!(token.getParent() instanceof LiteralTree) && !(token.getParent().getKind().name().equals("REGULAR_STRING_LITERAL"))) {
