@@ -31,8 +31,6 @@ public class ForbidGoto extends PHPVisitorCheck {
     @Override
     public void visitGotoStatement(GotoStatementTree tree) {
 
-        System.out.println(tree.getKind() + ": " + ERR_MSG);
-
         // Displays an error message, when a goto statement has been detected
         context().newIssue(this, tree, ERR_MSG);
 
