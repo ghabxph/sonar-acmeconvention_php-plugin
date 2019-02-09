@@ -16,6 +16,16 @@ import java.io.File;
 public abstract class GenericTest {
 
     /**
+     * Returns the file sample file
+     *
+     * @param file  File name
+     * @return  Returns the file sample file
+     */
+    protected String fileSampleFile(String file) {
+        return "src/test/resources/checks/" + file;
+    }
+
+    /**
      * Class to be tested
      *
      * @return PHPCheck  Returns the class to be tested
