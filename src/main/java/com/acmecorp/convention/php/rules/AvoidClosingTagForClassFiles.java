@@ -48,6 +48,6 @@ public class AvoidClosingTagForClassFiles extends PHPVisitorCheck {
      * @return  Returns true if we have only one class within a file.
      */
     private boolean hasClass() {
-        return ClassCounter.getClassCountInFile(context().getPhpFile(), context().tree()) > 1;
+        return ClassCounter.getClassCountInFile(context().getPhpFile(), context().tree()) >= 1;
     }
 }
