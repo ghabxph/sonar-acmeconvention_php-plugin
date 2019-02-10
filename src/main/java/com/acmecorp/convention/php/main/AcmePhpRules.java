@@ -93,7 +93,10 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
             NoCrlf.class,
 
             // (Rule) PHP File should have no more than 1 class
-            OneClassPerFile.class
+            OneClassPerFile.class,
+
+            // (Rule) There should only be one statement per line
+            OneStatementPerLine.class
       );
     }
 
