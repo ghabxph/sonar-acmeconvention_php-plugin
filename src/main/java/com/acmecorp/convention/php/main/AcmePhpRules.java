@@ -74,6 +74,9 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
             // (Rule) Prohibits short open tag usage.
             AvoidTagShort.class,
 
+            // (Rule) Control statement cannot be empty
+            ControlStatementMustHaveStatement.class,
+
             // (Rule) Forbids the use of PHP Command Execution Functions
             ForbidCommandExecution.class,
 
