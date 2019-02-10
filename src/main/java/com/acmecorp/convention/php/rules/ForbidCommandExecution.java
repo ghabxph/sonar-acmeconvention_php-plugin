@@ -18,10 +18,10 @@ import java.util.Set;
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
-    priority = Priority.MAJOR,
+    priority = Priority.CRITICAL,
     key = "ForbidCommandExecution",
     name = "Forbids the use of PHP Command Execution Functions",
-    tags = {"convention"}
+    tags = {"convention", "vulnerability"}
 )
 public class ForbidCommandExecution extends ForbidFunctionRule {
 

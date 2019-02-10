@@ -13,10 +13,10 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
  * @author ghabxph (ghabxph.official@gmail.com)
  */
 @Rule(
-        priority = Priority.MAJOR,
-        key = "MethodLess100Lines",
-        name = "Method should have less than 100 lines of code",
-        tags = {"convention"}
+    priority = Priority.MAJOR,
+    key = "MethodLess100Lines",
+    name = "Method should have less than 100 lines of code",
+    tags = {"convention", "code-smell"}
 )
 public class MethodLess100Lines extends PHPVisitorCheck {
 

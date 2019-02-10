@@ -15,7 +15,7 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
     priority = Priority.MAJOR,
     key = "ControlStatementMustHaveStatement",
     name = "Control statement cannot be empty",
-    tags = {"convention"}
+    tags = {"convention", "code-smell"}
 )
 public class ControlStatementMustHaveStatement extends PHPVisitorCheck {
 

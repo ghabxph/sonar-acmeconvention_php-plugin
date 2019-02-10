@@ -23,7 +23,7 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
     priority = Priority.MAJOR,
     key = "AvoidTagCloseForClassFiles",
     name = "Avoid closing tag (for class files)",
-    tags = {"convention"}
+    tags = {"convention", "code-smell"}
 )
 public class AvoidTagCloseForClassFiles extends PHPVisitorCheck {
 

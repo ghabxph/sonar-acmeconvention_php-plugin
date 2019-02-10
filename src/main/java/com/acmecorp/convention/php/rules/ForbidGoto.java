@@ -11,10 +11,10 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
-    priority = Priority.MAJOR,
+    priority = Priority.CRITICAL,
     key = "ForbidGoto",
     name = "Forbids the use of GOTO",
-    tags = {"convention"}
+    tags = {"convention", "code-smell", "bad-practice"}
 )
 public class ForbidGoto extends PHPVisitorCheck {
 

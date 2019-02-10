@@ -13,7 +13,7 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
-    priority = Priority.MAJOR,
+    priority = Priority.MINOR,
     key = "AvoidDoubleQuote",
     name = "Avoid usage of double quote for string literals.",
     tags = {"convention"}

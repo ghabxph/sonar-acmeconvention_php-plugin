@@ -28,10 +28,10 @@ import java.util.Set;
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
-    priority = Priority.MAJOR,
+    priority = Priority.CRITICAL,
     key = "ForbidPhpCodeExecution",
     name = "Forbids the use of PHP Code Execution Functions",
-    tags = {"convention"}
+    tags = {"convention", "vulnerability"}
 )
 public class ForbidPhpCodeExecution extends ForbidFunctionRule {
 

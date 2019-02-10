@@ -13,7 +13,7 @@ import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
  * @author ghabxph (me@ghabxph.info)
  */
 @Rule(
-    priority = Priority.MAJOR,
+    priority = Priority.MINOR,
     key = "AvoidFunctionSizeof",
     name = "Use count() instead of sizeof()",
     tags = {"convention"}
