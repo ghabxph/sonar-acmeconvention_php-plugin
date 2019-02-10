@@ -28,7 +28,6 @@ public class PhpRegexModifier {
      */
     private static String getModifiers(String pattern)
     {
-        System.out.println(pattern.split("/").length);
         String[] arr = pattern.split("/");
         return arr[arr.length - 1];
     }
