@@ -90,7 +90,10 @@ public class AcmePhpRules implements RulesDefinition, PHPCustomRuleRepository {
             MethodLess100Lines.class,
 
             // (Rule) Rule that checks whether each php statement ends with CRLF
-            NoCrlf.class
+            NoCrlf.class,
+
+            // (Rule) PHP File should have no more than 1 class
+            OneClassPerFile.class
       );
     }
 
